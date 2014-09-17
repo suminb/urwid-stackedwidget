@@ -1,8 +1,10 @@
+# -*- coding: utf-8 -*-
+import urwid
 
 __author__ = 'Sumin Byeon'
 __version__ = '0.1.0'
+__all__ = ['StackedWidget']
 
-import urwid
 
 class StackedWidget(urwid.Widget):
     """A widget container that presents one child widget at a time."""
