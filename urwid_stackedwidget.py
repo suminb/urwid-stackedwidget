@@ -42,7 +42,23 @@ class StackedWidget(urwid.Widget):
         else:
             return None
 
+    def selectable(self):
+        """It appears ``selectable()`` must return ``True`` in order to get any
+        key input."""
+
+        return True
+
     def render(self, size, focus=False):
         assert self.current_widget is not None
 
         return self.current_widget.render(size, focus)
+
+    def keypress(self, size, key):
+        """Passes key inputs to the current widget. If the current widget is
+        ``None`` then it returns the given key input so that
+        ``unhandled_input`` function can handle it."""
+
+        if self.current_widget is not None:
+            return self.current_widget.keypress(size, key)
+        else:
+            return key
