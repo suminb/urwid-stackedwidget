@@ -16,6 +16,10 @@ class StackedWidget(urwid.Widget):
     current = 0
 
     def add_widget(self, widget):
+        # Deprecated
+        self.push_widget(widget)
+
+    def push_widget(self, widget):
         """Appends a widget at the end of the list."""
         self.widgets.append(widget)
 
@@ -23,9 +27,36 @@ class StackedWidget(urwid.Widget):
         """Inserts a widget at a given index."""
         self.widgets.insert(index, widget)
 
+    def pop_widget(self):
+        """Retrieves and removes the last widget (with the maximum index)."""
+        n = len(self.widgets)
+        assert n > 0
+
+        widget = self.widgets.pop()
+        if self.current == n - 1:
+            self.current -= 1
+
+        self._invalidate()
+
+        return widget
+
     def show_widget(self, index):
         assert 0 <= index < len(self.widgets)
         self.current = index
+        self._invalidate()
+
+    def show_next_widget(self):
+        n = len(self.widgets)
+        assert n > 0
+
+        self.current = (self.current + 1) % n
+        self._invalidate()
+
+    def show_previous_widget(self):
+        n = len(self.widgets)
+        assert n > 0
+
+        self.current = (self.current - 1 + n) % n
         self._invalidate()
 
     @property

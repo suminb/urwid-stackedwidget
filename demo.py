@@ -17,11 +17,11 @@ def keypress(key):
 
 
 def main():
-    stacked_widget.add_widget(
+    stacked_widget.push_widget(
         urwid.Filler(urwid.Text('The first widget')))
-    stacked_widget.add_widget(
+    stacked_widget.push_widget(
         urwid.Filler(urwid.Text('The second widget')))
-    stacked_widget.add_widget(
+    stacked_widget.push_widget(
         urwid.Filler(urwid.Text('The third widget')))
 
     loop = urwid.MainLoop(stacked_widget, unhandled_input=keypress)
