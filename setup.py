@@ -3,6 +3,16 @@ from __future__ import with_statement
 from setuptools import setup
 from urwid_stackedwidget import __version__
 
+
+def readme():
+    try:
+        f = open('README.rst')
+        content = f.read()
+        f.close()
+        return content
+    except Exception:
+        pass
+
 setup(
     name='urwid-stackedwidget',
     version=__version__,
@@ -12,7 +22,7 @@ setup(
     maintainer='',
     url='https://github.com/suminb/urwid-stackedwidget',
     description='A widget container that presents one child widget at a time.',
-    long_description=__doc__,
+    long_description=readme(),
     platforms='any',
     py_modules=['urwid_stackedwidget'],
     classifiers=[
