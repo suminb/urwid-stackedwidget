@@ -93,3 +93,10 @@ class StackedWidget(urwid.Widget):
             return self.current_widget.keypress(size, key)
         else:
             return key
+
+    def mouse_event(self, size, event, button, col, row, focus):
+        if self.current_widget is not None:
+            return self.current_widget.mouse_event(
+                    size, event, button, col, row, focus)
+        else:
+            return key
