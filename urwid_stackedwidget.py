@@ -2,7 +2,7 @@
 import urwid
 
 __author__ = 'Sumin Byeon'
-__version__ = '0.1.1'
+__version__ = '0.1.2'
 __all__ = ['StackedWidget']
 
 
@@ -14,6 +14,10 @@ class StackedWidget(urwid.Widget):
 
     #: An index of the current widget
     current = 0
+
+    def __init__(self):
+        self.widgets = []
+        self.current = 0
 
     def add_widget(self, widget):
         # Deprecated
