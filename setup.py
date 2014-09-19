@@ -26,7 +26,7 @@ setup(
     platforms='any',
     py_modules=['urwid_stackedwidget'],
     classifiers=[
-        'Development Status :: 2 - Pre-Alpha',
+        'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',
         'License :: Public Domain',
         'Operating System :: MacOS :: MacOS X',
