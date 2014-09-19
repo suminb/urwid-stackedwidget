@@ -10,7 +10,7 @@ install:
 
 script:
   - export PYTHONPATH=$PYTHONPATH:.
-  - py.test
+  - py.test tests --cov urwid_stackedwidget --durations=10
 
 after_success:
   - coveralls
