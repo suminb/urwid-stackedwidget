@@ -16,3 +16,12 @@ Installation
 ::
 
     pip install urwid-stackedwidget
+
+CI & Coverage
+=============
+
+.. image:: https://travis-ci.org/suminb/urwid-stackedwidget.svg?branch=master
+    :target: https://travis-ci.org/suminb/urwid-stackedwidget
+
+.. image:: https://coveralls.io/repos/suminb/urwid-stackedwidget/badge.png?branch=master
+    :target: https://coveralls.io/r/suminb/urwid-stackedwidget?branch=master
