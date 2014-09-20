@@ -5,13 +5,9 @@ from urwid_stackedwidget import __version__
 
 
 def readme():
-    try:
-        f = open('README.rst')
-        content = f.read()
-        f.close()
-        return content
-    except Exception:
-        pass
+    with open('README.rst') as f:
+        return f.read()
+
 
 setup(
     name='urwid-stackedwidget',
