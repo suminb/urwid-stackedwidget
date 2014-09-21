@@ -9,6 +9,7 @@ urwid-stackedwidget
 - To switch to a different widget
 
 
+.. image:: https://github.com/suminb/urwid-stackedwidget/blob/master/assets/stackedwidgets.png
 
 Installation
 ============
