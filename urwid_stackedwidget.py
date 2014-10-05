@@ -19,10 +19,6 @@ class StackedWidget(urwid.Widget):
         self.widgets = []
         self.current = 0
 
-    def add_widget(self, widget):
-        # Deprecated
-        self.push_widget(widget)
-
     def push_widget(self, widget):
         """Appends a widget at the end of the list."""
         self.widgets.append(widget)
@@ -101,6 +97,6 @@ class StackedWidget(urwid.Widget):
     def mouse_event(self, size, event, button, col, row, focus):
         if self.current_widget is not None:
             return self.current_widget.mouse_event(
-                    size, event, button, col, row, focus)
+                size, event, button, col, row, focus)
         else:
-            return key
+            return False
