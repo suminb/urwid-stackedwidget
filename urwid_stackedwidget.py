@@ -46,18 +46,12 @@ class StackedWidget(urwid.Widget):
         self._invalidate()
 
     def show_next_widget(self):
-        n = len(self.widgets)
-        assert n > 0
-
-        self.current = (self.current + 1) % n
-        self._invalidate()
+        n = self.widget_count
+        self.show_widget((self.current + 1) % n)
 
     def show_previous_widget(self):
-        n = len(self.widgets)
-        assert n > 0
-
-        self.current = (self.current - 1 + n) % n
-        self._invalidate()
+        n = self.widget_count
+        self.show_widget((self.current - 1 + n) % n)
 
     @property
     def widget_count(self):
